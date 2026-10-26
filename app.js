@@ -13,7 +13,7 @@
   const onScroll=()=>header.classList.toggle('scrolled',scrollY>8);
   addEventListener('scroll',onScroll,{passive:true});onScroll();
 
-  // logo always returns to top (the #top header is sticky, so the anchor alone won't scroll)
+  // logo always returns to the very top of the page
   document.querySelectorAll('a.brand').forEach(a=>a.addEventListener('click',e=>{
     e.preventDefault();
     scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
