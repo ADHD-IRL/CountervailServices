@@ -13,6 +13,13 @@
   const onScroll=()=>header.classList.toggle('scrolled',scrollY>8);
   addEventListener('scroll',onScroll,{passive:true});onScroll();
 
+  // logo always returns to top (the #top header is sticky, so the anchor alone won't scroll)
+  document.querySelectorAll('a.brand').forEach(a=>a.addEventListener('click',e=>{
+    e.preventDefault();
+    scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+    history.replaceState(null,'',location.pathname+location.search);
+  }));
+
   // mobile menu
   const menuBtn=document.querySelector('[data-menu]');const nav=document.querySelector('.nav');
   menuBtn.addEventListener('click',()=>{const o=nav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',o);});
