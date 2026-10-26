@@ -143,6 +143,13 @@ tbody td:last-child{font-weight:500}
 .band-copy p:last-child{color:#a9acb3}
 
 /* methods */
+.sector-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-4)}
+.sector{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);padding:var(--space-6);display:flex;flex-direction:column;gap:var(--space-3);transition:transform var(--t),box-shadow var(--t)}
+.sector:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.sector h3{font-family:var(--font-display);font-size:var(--text-lg);font-weight:500;line-height:1.2}
+.sector p{font-size:var(--text-sm);color:var(--muted);flex:1}
+.chips{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:var(--space-2)}
+.chips li{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.02em;padding:4px 10px;border-radius:999px;background:var(--primary-soft);color:var(--text)}
 .method-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-4)}
 .method{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);padding:var(--space-6);display:flex;flex-direction:column;gap:var(--space-3);transition:transform var(--t),box-shadow var(--t)}
 .method:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
@@ -280,13 +287,13 @@ tbody td:last-child{font-weight:500}
   .menu-btn{display:grid}
   .hero-grid,.split,.band-grid,.council-grid,.offers,.contact-grid,.panel{grid-template-columns:1fr}
   .council-intro,.offer-lead{position:static}
-  .method-grid{grid-template-columns:1fr 1fr}
+  .method-grid,.sector-grid{grid-template-columns:1fr 1fr}
   .method-grid .feature:nth-child(1){grid-column:1 / -1}
   .hero-media img{aspect-ratio:16/9}
 }
 @media (max-width:640px){
   .header-actions .btn-sm{display:none}
-  .caps,.roster,.principles dl,.method-grid,.team,.field-row,.guard-grid{grid-template-columns:1fr}
+  .caps,.roster,.principles dl,.method-grid,.sector-grid,.team,.field-row,.guard-grid{grid-template-columns:1fr}
   .flow{grid-template-columns:1fr 1fr}
   .flow h3{min-height:0}
   .layers li{grid-template-columns:1fr}

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000">
+<defs><radialGradient id="vg" cx="50%" cy="45%" r="75%"><stop offset="0" stop-color="#1a1f26"/><stop offset="1" stop-color="#111418"/></radialGradient><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity=".025"/></pattern></defs>
+<rect width="800" height="1000" fill="url(#vg)"/><rect width="800" height="1000" fill="url(#grid)"/>
+<circle cx="400" cy="460" r="280" fill="none" stroke="#2a3038" stroke-width="1"/>
+<circle cx="400" cy="460" r="154" fill="none" stroke="#2a3038" stroke-width="1" stroke-dasharray="3 6"/>
+<line x1="400.0" y1="180.0" x2="400" y2="460" stroke="#3a424d" stroke-width="1.1"/>
+<line x1="551.4" y1="224.4" x2="400" y2="460" stroke="#3a424d" stroke-width="1.1"/>
+<line x1="654.7" y1="343.7" x2="400" y2="460" stroke="#3a424d" stroke-width="1.1"/>
+<line x1="677.2" y1="499.8" x2="400" y2="460" stroke="#3a424d" stroke-width="1.1"/>
+<line x1="611.6" y1="643.4" x2="400" y2="460" stroke="#3a424d" stroke-width="1.1"/>
+<line x1="478.9" y1="728.7" x2="400" y2="460" stroke="#3a424d" stroke-width="1.1"/>
+<line x1="321.1" y1="728.7" x2="400" y2="460" stroke="#3a424d" stroke-width="1.1"/>
+<line x1="188.4" y1="643.4" x2="400" y2="460" stroke="#3a424d" stroke-width="1.1"/>
+<line x1="122.8" y1="499.8" x2="400" y2="460" stroke="#3a424d" stroke-width="1.1"/>
+<line x1="145.3" y1="343.7" x2="400" y2="460" stroke="#3a424d" stroke-width="1.1"/>
+<line x1="248.6" y1="224.4" x2="400" y2="460" stroke="#e5584e" stroke-width="2" stroke-dasharray="6 6"/>
+<circle cx="400" cy="460" r="78" fill="#171b21" stroke="#6b7380" stroke-width="1.6"/>
+<g transform="translate(400 450) scale(2)" fill="none" stroke="#c9c6bf" stroke-width="1.4" stroke-linejoin="round"><path d="M-7 -10h10l5 5v15h-15z"/><path d="M-3 -3h7M-3 1h7M-3 5h5"/></g>
+<text x="400" y="508" text-anchor="middle" font-family="JetBrains Mono, Consolas, 'Courier New', monospace" font-size="16" letter-spacing="2" fill="#8b929c">THE PLAN</text>
+<circle cx="400.0" cy="180.0" r="34" fill="#171b21" stroke="#6b7380" stroke-width="1.6"/>
+<g transform="translate(400.0 180.0) scale(1.42)" fill="none" stroke="#c9c6bf" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"><path d="M0 -10 9 -6v5c0 6-4 9-9 11-5-2-9-5-9-11v-5z"/></g>
+<text x="400.0" y="132.0" text-anchor="middle" font-family="JetBrains Mono, Consolas, 'Courier New', monospace" font-size="19" letter-spacing="1.5" fill="#8b929c" stroke="#111418" stroke-width="6" stroke-linejoin="round" paint-order="stroke">ADVERSARY</text>
+<circle cx="551.4" cy="224.4" r="34" fill="#171b21" stroke="#6b7380" stroke-width="1.6"/>
+<g transform="translate(551.4 224.4) scale(1.42)" fill="none" stroke="#c9c6bf" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"><path d="M-11 -4 0 -10 11 -4z"/><path d="M-8 -1v8M-3 -1v8M3 -1v8M8 -1v8M-11 9h22"/></g>
+<text x="551.4" y="176.4" text-anchor="middle" font-family="JetBrains Mono, Consolas, 'Courier New', monospace" font-size="19" letter-spacing="1.5" fill="#8b929c" stroke="#111418" stroke-width="6" stroke-linejoin="round" paint-order="stroke">OPERATIONS</text>
+<circle cx="654.7" cy="343.7" r="34" fill="#171b21" stroke="#6b7380" stroke-width="1.6"/>
+<g transform="translate(654.7 343.7) scale(1.42)" fill="none" stroke="#c9c6bf" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"><path d="M-3 -9h6v6h6v6h-6v6h-6v-6h-6v-6h6z"/></g>
+<text x="654.7" y="295.7" text-anchor="middle" font-family="JetBrains Mono, Consolas, 'Courier New', monospace" font-size="19" letter-spacing="1.5" fill="#8b929c" stroke="#111418" stroke-width="6" stroke-linejoin="round" paint-order="stroke">CLINICAL</text>
+<circle cx="677.2" cy="499.8" r="34" fill="#171b21" stroke="#6b7380" stroke-width="1.6"/>
+<g transform="translate(677.2 499.8) scale(1.42)" fill="none" stroke="#c9c6bf" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"><path d="M-10 9 0 -9 10 9z"/><path d="M0 -2v5M0 6v.5"/></g>
+<text x="677.2" y="561.8" text-anchor="middle" font-family="JetBrains Mono, Consolas, 'Courier New', monospace" font-size="19" letter-spacing="1.5" fill="#8b929c" stroke="#111418" stroke-width="6" stroke-linejoin="round" paint-order="stroke">EMERGENCY</text>
+<circle cx="611.6" cy="643.4" r="34" fill="#171b21" stroke="#6b7380" stroke-width="1.6"/>
+<g transform="translate(611.6 643.4) scale(1.42)" fill="none" stroke="#c9c6bf" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"><circle cx="-5" cy="-4" r="3"/><circle cx="5" cy="-4" r="3"/><path d="M-11 8c0-5 3-7 6-7s6 2 6 7M-1 8c0-5 3-7 6-7s6 2 6 7"/></g>
+<text x="611.6" y="705.4" text-anchor="middle" font-family="JetBrains Mono, Consolas, 'Courier New', monospace" font-size="19" letter-spacing="1.5" fill="#8b929c" stroke="#111418" stroke-width="6" stroke-linejoin="round" paint-order="stroke">COMMUNITY</text>
+<circle cx="478.9" cy="728.7" r="34" fill="#171b21" stroke="#6b7380" stroke-width="1.6"/>
+<g transform="translate(478.9 728.7) scale(1.42)" fill="none" stroke="#c9c6bf" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"><rect x="-8" y="-4" width="16" height="8" rx="4"/><circle cx="-5" cy="-8" r="1.4"/><circle cx="0" cy="-8" r="1.4"/><circle cx="5" cy="-8" r="1.4"/><circle cx="-5" cy="8" r="1.4"/><circle cx="0" cy="8" r="1.4"/><circle cx="5" cy="8" r="1.4"/></g>
+<text x="478.9" y="790.7" text-anchor="middle" font-family="JetBrains Mono, Consolas, 'Courier New', monospace" font-size="19" letter-spacing="1.5" fill="#8b929c" stroke="#111418" stroke-width="6" stroke-linejoin="round" paint-order="stroke">BOARD</text>
+<circle cx="321.1" cy="728.7" r="34" fill="#171b21" stroke="#6b7380" stroke-width="1.6"/>
+<g transform="translate(321.1 728.7) scale(1.42)" fill="none" stroke="#c9c6bf" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"><path d="M-7 -10h10l5 5v15h-15z"/><path d="M-3 -3h7M-3 1h7M-3 5h5"/></g>
+<text x="321.1" y="790.7" text-anchor="middle" font-family="JetBrains Mono, Consolas, 'Courier New', monospace" font-size="19" letter-spacing="1.5" fill="#8b929c" stroke="#111418" stroke-width="6" stroke-linejoin="round" paint-order="stroke">COMPLIANCE</text>
+<circle cx="188.4" cy="643.4" r="34" fill="#171b21" stroke="#6b7380" stroke-width="1.6"/>
+<g transform="translate(188.4 643.4) scale(1.42)" fill="none" stroke="#c9c6bf" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"><path d="M-11 0C-7 -7 7 -7 11 0 7 7 -7 7 -11 0z"/><circle r="3"/></g>
+<text x="188.4" y="705.4" text-anchor="middle" font-family="JetBrains Mono, Consolas, 'Courier New', monospace" font-size="19" letter-spacing="1.5" fill="#8b929c" stroke="#111418" stroke-width="6" stroke-linejoin="round" paint-order="stroke">DETECTION</text>
+<circle cx="122.8" cy="499.8" r="34" fill="#171b21" stroke="#6b7380" stroke-width="1.6"/>
+<g transform="translate(122.8 499.8) scale(1.42)" fill="none" stroke="#c9c6bf" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"><path d="M-10 5a10 10 0 0 1 20 0"/><path d="M0 5 6 -3"/><path d="M-10 8h20"/></g>
+<text x="122.8" y="561.8" text-anchor="middle" font-family="JetBrains Mono, Consolas, 'Courier New', monospace" font-size="19" letter-spacing="1.5" fill="#8b929c" stroke="#111418" stroke-width="6" stroke-linejoin="round" paint-order="stroke">SAFETY</text>
+<circle cx="145.3" cy="343.7" r="34" fill="#171b21" stroke="#6b7380" stroke-width="1.6"/>
+<g transform="translate(145.3 343.7) scale(1.42)" fill="none" stroke="#c9c6bf" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"><path d="M-10 -8h20v13h-9l-6 5v-5h-5z"/><path d="M0 2c-4-3-5-5-3-7 1-1 3-1 3 1 0-2 2-2 3-1 2 2 1 4-3 7z"/></g>
+<text x="145.3" y="295.7" text-anchor="middle" font-family="JetBrains Mono, Consolas, 'Courier New', monospace" font-size="19" letter-spacing="1.5" fill="#8b929c" stroke="#111418" stroke-width="6" stroke-linejoin="round" paint-order="stroke">LEGAL &amp; COMMS</text>
+<circle cx="248.6" cy="224.4" r="34" fill="#171b21" stroke="#e5584e" stroke-width="1.6"/>
+<g transform="translate(248.6 224.4) scale(1.42)" fill="none" stroke="#e5584e" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"><path d="M-8 -3h16M-8 3h16M5 -10-5 10"/></g>
+<text x="248.6" y="176.4" text-anchor="middle" font-family="JetBrains Mono, Consolas, 'Courier New', monospace" font-size="19" letter-spacing="1.5" fill="#e5584e" stroke="#111418" stroke-width="6" stroke-linejoin="round" paint-order="stroke">CONTRARIAN</text>
+<text x="60" y="84" font-family="JetBrains Mono, Consolas, 'Courier New', monospace" font-size="20" letter-spacing="3" fill="#e5584e">AI SME COUNCIL</text>
+<rect x="50" y="808" width="700" height="150" rx="8" fill="#24171a" stroke="#e5584e" stroke-width="1.3"/>
+<text x="78" y="846" font-family="JetBrains Mono, Consolas, 'Courier New', monospace" font-size="16" letter-spacing="1.5" fill="#e5584e">REQUIRED DISSENT · CONTRARIAN</text>
+<text x="78" y="890" font-family="Gambetta, Georgia, serif" font-size="29" fill="#e7e4dd">“The shelter plan assumes volunteers</text>
+<text x="78" y="928" font-family="Gambetta, Georgia, serif" font-size="29" fill="#e7e4dd">can reach it. In a flood, they can’t.”</text>
+</svg>

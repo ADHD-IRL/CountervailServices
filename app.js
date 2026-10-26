@@ -50,7 +50,7 @@
   });
 
   // reveal
-  const els=document.querySelectorAll('.section-head,.limits li,.pull,.compare,.method,.roster li,.offer,.flow li,.layers li,.guard,.team-card,.band-copy');
+  const els=document.querySelectorAll('.section-head,.limits li,.pull,.compare,.sector,.method,.roster li,.offer,.flow li,.layers li,.guard,.team-card,.band-copy');
   els.forEach(el=>el.classList.add('reveal'));
   const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}}),{rootMargin:'0px 0px -8% 0px'});
   els.forEach(el=>io.observe(el));
