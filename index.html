@@ -16,7 +16,7 @@
 <link href="https://api.fontshare.com/v2/css?f[]=gambetta@400,500,600&f[]=switzer@400,500,600&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="style.css?v=4">
 </head>
 <body id="top">
 <a class="skip" href="#main">Skip to content</a>
@@ -504,16 +504,21 @@
         <li>Delivery inside your secure or accredited environment when required</li>
       </ul>
     </div>
-    <form class="form" id="contact-form" novalidate>
+    <form class="form" id="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+      <!-- Web3Forms public access key (safe to publish; it only allows sending to the inbox it was created for) -->
+      <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+      <input type="hidden" name="subject" value="New scoping request from the Countervail site">
+      <input type="hidden" name="from_name" value="Countervail website">
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div class="field-row">
         <label>Name<input name="name" required autocomplete="name"></label>
-        <label>Organization<input name="org" required autocomplete="organization"></label>
+        <label>Organization<input name="organization" required autocomplete="organization"></label>
       </div>
       <label>Work email<input type="email" name="email" required autocomplete="email"></label>
       <div class="field-row">
         <label>Sector
           <select name="sector">
-            <option>Select one</option>
+            <option value="">Select one</option>
             <option>Defense &amp; national security</option>
             <option>City or local government</option>
             <option>Healthcare</option>
@@ -543,7 +548,7 @@
           </select>
         </label>
       </div>
-      <label>What are you trying to find or prevent?<textarea name="msg" rows="4"></textarea></label>
+      <label>What are you trying to find or prevent?<textarea name="message" rows="4"></textarea></label>
       <p class="form-note">Please don't include classified, CUI, patient, student, or other sensitive details in this form.</p>
       <button class="btn btn-primary" type="submit">Request a scoping call</button>
       <p class="form-status" role="status" aria-live="polite"></p>
@@ -571,6 +576,6 @@
   </div>
 </footer>
 
-<script src="app.js?v=3"></script>
+<script src="app.js?v=4"></script>
 </body>
 </html>

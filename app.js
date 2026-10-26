@@ -45,15 +45,26 @@
     [...sel.options].forEach(o=>{if(o.text===v)sel.value=o.value||o.text;});
   }));
 
-  // form
-  const form=document.getElementById('contact-form');const status=form.querySelector('.form-status');
-  form.addEventListener('submit',e=>{
+  // form (Web3Forms)
+  const form=document.getElementById('contact-form');const status=form.querySelector('.form-status');const submit=form.querySelector('[type="submit"]');
+  form.addEventListener('submit',async e=>{
     e.preventDefault();let ok=true;
     form.querySelectorAll('[required]').forEach(f=>{const bad=!f.value.trim()||(f.type==='email'&&!/^\S+@\S+\.\S+$/.test(f.value));f.classList.toggle('invalid',bad);f.setAttribute('aria-invalid',bad);if(bad)ok=false;});
     if(!ok){status.className='form-status err';status.textContent='Please complete name, organization, and a valid work email.';return;}
-    status.className='form-status ok';
-    status.textContent='Thanks, '+form.name.value.trim().split(' ')[0]+'. We\u2019ll reach out to schedule a scoping call on '+sel.value+'.';
-    form.reset();
+    if(form.elements.botcheck.checked)return;
+    const first=form.elements.name.value.trim().split(' ')[0];const topic=sel.value;
+    submit.disabled=true;status.className='form-status';status.textContent='Sending…';
+    try{
+      const res=await fetch(form.action,{method:'POST',headers:{Accept:'application/json'},body:new FormData(form)});
+      const data=await res.json().catch(()=>({}));
+      if(!res.ok||!data.success)throw new Error(data.message||'Request failed');
+      status.className='form-status ok';
+      status.textContent='Thanks, '+first+'. We’ll reach out to schedule a scoping call on '+topic+'.';
+      form.reset();
+    }catch(err){
+      status.className='form-status err';
+      status.textContent='Sorry, your message didn’t send. Please try again in a moment.';
+    }finally{submit.disabled=false;}
   });
 
   // reveal
