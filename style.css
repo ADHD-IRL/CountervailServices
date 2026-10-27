@@ -46,6 +46,14 @@ button{font:inherit;color:inherit;cursor:pointer}
 /* header */
 .site-header{position:sticky;top:0;z-index:50;background:color-mix(in oklab,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color var(--t)}
 .site-header.scrolled{border-bottom-color:var(--line)}
+.family-bar{border-bottom:1px solid var(--line);font-family:var(--font-mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase}
+.family-inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);min-height:34px}
+.family-label{color:var(--faint)}
+.family-links{display:flex;flex-wrap:wrap;gap:var(--space-5)}
+.family-links a{color:var(--muted);text-decoration:none;transition:color var(--t)}
+.family-links a:hover{color:var(--text)}
+.family-links a[aria-current]{color:var(--color-primary)}
+@media (max-width:640px){.family-bar{font-size:.65rem;letter-spacing:.04em}.family-label{display:none}.family-inner{justify-content:flex-start}.family-links{gap:var(--space-3);flex-wrap:nowrap}}
 .header-inner{display:flex;align-items:center;gap:var(--space-8);height:68px}
 .header-inner .btn,.brand{white-space:nowrap;flex-shrink:0}
 .brand{display:flex;align-items:center;gap:var(--space-2);text-decoration:none}
