@@ -47,9 +47,12 @@ button{font:inherit;color:inherit;cursor:pointer}
 .site-header{position:sticky;top:0;z-index:50;background:color-mix(in oklab,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color var(--t)}
 .site-header.scrolled{border-bottom-color:var(--line)}
 .header-inner{display:flex;align-items:center;gap:var(--space-8);height:68px}
+.header-inner .btn,.brand{white-space:nowrap;flex-shrink:0}
 .brand{display:flex;align-items:center;gap:var(--space-2);text-decoration:none}
 .brand-mark{width:30px;height:30px;color:var(--text)}
 .brand-word{font-family:var(--font-display);font-size:1.35rem;font-weight:600;letter-spacing:-.01em}
+.brand-text{display:flex;flex-direction:column;line-height:1.05}
+.brand-by{font-family:var(--font-mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:3px}
 .nav{display:flex;gap:var(--space-6);margin-left:auto}
 .nav a{font-size:var(--text-sm);text-decoration:none;color:var(--muted);transition:color var(--t)}
 .nav a:hover{color:var(--text)}
@@ -278,7 +281,9 @@ tbody td:last-child{font-weight:500}
 .site-footer{padding-block:var(--space-16) var(--space-10);border-top:1px solid var(--line)}
 .footer-inner{display:grid;grid-template-columns:1fr auto;gap:var(--space-4) var(--space-8)}
 .foot-tag{color:var(--muted);font-size:var(--text-sm);grid-column:1}
-.foot-nav{display:flex;flex-wrap:wrap;gap:var(--space-5);grid-column:2;grid-row:1 / span 2;align-self:center}
+.foot-family{color:var(--muted);font-size:var(--text-sm);grid-column:1}
+.foot-family a{color:var(--text);text-decoration-color:var(--color-primary);text-underline-offset:3px}
+.foot-nav{display:flex;flex-wrap:wrap;gap:var(--space-5);grid-column:2;grid-row:1 / span 3;align-self:center}
 .foot-nav a{font-size:var(--text-sm);color:var(--muted);text-decoration:none}
 .foot-nav a:hover{color:var(--text)}
 .foot-legal{grid-column:1 / -1;font-size:var(--text-xs);color:var(--faint);margin-top:var(--space-8);padding-top:var(--space-6);border-top:1px solid var(--line)}
@@ -289,7 +294,7 @@ tbody td:last-child{font-weight:500}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}html{scroll-behavior:auto}}
 
 /* responsive */
-@media (max-width:1180px){
+@media (max-width:1260px){
   .nav{display:none;position:absolute;top:68px;left:0;right:0;background:var(--bg);flex-direction:column;gap:0;padding:var(--space-2) var(--space-5) var(--space-5);border-bottom:1px solid var(--line)}
   .nav.open{display:flex}
   .nav a{padding:var(--space-3) 0;font-size:var(--text-base);border-bottom:1px solid var(--line)}
