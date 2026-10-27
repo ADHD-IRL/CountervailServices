@@ -124,6 +124,10 @@ tbody td:last-child{font-weight:500}
 
 /* services tabs */
 .services{background:var(--surface)}
+.program{background:var(--surface)}
+.program .caps li{background:var(--bg)}
+.program-sub{font-family:var(--font-display);font-size:var(--text-xl);font-weight:500;margin-bottom:var(--space-3)}
+.program-scale{margin:clamp(var(--space-12),6vw,var(--space-20)) 0 var(--space-6)}
 .tabs{display:flex;gap:var(--space-1);border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:none}
 .tabs button{background:none;border:0;border-bottom:2px solid transparent;padding:var(--space-4) var(--space-5);font-size:var(--text-sm);font-weight:500;color:var(--muted);white-space:nowrap;margin-bottom:-1px;transition:color var(--t),border-color var(--t)}
 .tabs button[aria-selected="true"]{color:var(--text);border-bottom-color:var(--color-primary)}
@@ -284,15 +288,17 @@ tbody td:last-child{font-weight:500}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}html{scroll-behavior:auto}}
 
 /* responsive */
+@media (max-width:1180px){
+  .nav{display:none;position:absolute;top:68px;left:0;right:0;background:var(--bg);flex-direction:column;gap:0;padding:var(--space-2) var(--space-5) var(--space-5);border-bottom:1px solid var(--line)}
+  .nav.open{display:flex}
+  .nav a{padding:var(--space-3) 0;font-size:var(--text-base);border-bottom:1px solid var(--line)}
+  .menu-btn{display:grid}
+}
 @media (max-width:1100px){
   .flow{grid-template-columns:repeat(4,1fr);row-gap:var(--space-8)}
   .guard-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media (max-width:960px){
-  .nav{display:none;position:absolute;top:68px;left:0;right:0;background:var(--bg);flex-direction:column;gap:0;padding:var(--space-2) var(--space-5) var(--space-5);border-bottom:1px solid var(--line)}
-  .nav.open{display:flex}
-  .nav a{padding:var(--space-3) 0;font-size:var(--text-base);border-bottom:1px solid var(--line)}
-  .menu-btn{display:grid}
   .hero-grid,.split,.band-grid,.council-grid,.offers,.contact-grid,.panel{grid-template-columns:1fr}
   .council-intro,.offer-lead{position:static}
   .method-grid,.sector-grid{grid-template-columns:1fr 1fr}
