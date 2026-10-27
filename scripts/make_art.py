@@ -131,8 +131,9 @@ def card(x, y, w, tag, title, sub, hot=False):
 def ttx():
     W, H = 1200, 900
     b = []
-    b.append(f'<text x="70" y="90" font-family="{MONO}" font-size="18" letter-spacing="3" fill="{RED}">TABLETOP · REGIONAL HEATWAVE</text>')
-    b.append(f'<text x="70" y="140" font-family="{SERIF}" font-size="44" fill="{TEXT}">Branching scenario, live</text>')
+    b.append(f'<text x="70" y="90" font-family="{MONO}" font-size="18" letter-spacing="3" fill="{RED}">TABLETOP · REGIONAL HEATWAVE · RUN 07 OF 12</text>')
+    b.append(f'<circle cx="926" cy="84" r="6" fill="{RED}"/><circle cx="926" cy="84" r="12" fill="none" stroke="{RED}" stroke-opacity=".35"/><text x="1130" y="90" text-anchor="end" font-family="{MONO}" font-size="18" letter-spacing="3" fill="{RED}">LIVE FEED ON</text>')
+    b.append(f'<text x="70" y="140" font-family="{SERIF}" font-size="44" fill="{TEXT}">Branching scenario, live feed</text>')
     # timeline
     ty = 820
     b.append(f'<line x1="70" y1="{ty}" x2="1130" y2="{ty}" stroke="{LINE2}" stroke-width="1.3"/>')
@@ -145,8 +146,8 @@ def ttx():
         "b": (450, 190, "INJECT 04 · HEALTHCARE", "ED at 140% capacity", "Heat illness surge"),
         "c": (450, 375, "INJECT 05 · CRISIS LINE", "Wait time 18 min", "Call volume ×3"),
         "d": (830, 170, "DECISION · EOC", "Open cooling centers", "Player choice A"),
-        "e": (830, 310, "INJECT 09 · BOARD", "Press call in 30 min", "AI-played reporter", True),
-        "f": (830, 450, "INJECT 11 · UNIVERSITY", "Dorm power lost", "1,200 students affected"),
+        "e": (830, 310, "LIVE FEED · NEWS", "Reporter calls the EOC", "Reacts to player moves", True),
+        "f": (830, 450, "LIVE FEED · SOCIAL", "#DormBlackout trends", "University, 1,200 students"),
         "g": (450, 560, "INJECT 07 · NONPROFIT", "Volunteers unreachable", "Shelter staffing gap"),
         "h": (830, 610, "DECISION · CEO", "Delay product launch", "Player choice B"),
     }
@@ -161,7 +162,7 @@ def ttx():
     for k, v in C.items():
         x, y, tag, title, sub, *hot = v
         b.append(card(x, y, cw, tag, title, sub, bool(hot)))
-    b.append(f'<text x="70" y="770" font-family="{MONO}" font-size="16" letter-spacing="1.5" fill="{MUTED}">AAR DRAFT · 23 DECISIONS LOGGED · 6 GAPS FLAGGED</text>')
+    b.append(f'<text x="70" y="770" font-family="{MONO}" font-size="16" letter-spacing="1.5" fill="{MUTED}">MEASURED · 23 DECISIONS LOGGED · PRE/POST CAPTURED</text>')
     return svg(W, H, "\n".join(b))
 
 # ================= COUNCIL: personas around a plan (800x1000) =================
@@ -199,7 +200,59 @@ def council():
     b.append(f'<text x="78" y="928" font-family="{SERIF}" font-size="29" fill="{TEXT}">can reach it. In a flood, they can’t.”</text>')
     return svg(W, H, "\n".join(b))
 
-for name, fn in (("hero.svg", hero), ("ttx.svg", ttx), ("council.svg", council)):
+# ================= PROGRAM: outcome spread across repeated runs (800x1000) =================
+def program():
+    W, H = 800, 1000
+    b = []
+    b.append(f'<text x="60" y="84" font-family="{MONO}" font-size="20" letter-spacing="3" fill="{RED}">EXERCISE PROGRAM · 12 RUNS</text>')
+    b.append(f'<text x="60" y="136" font-family="{SERIF}" font-size="40" fill="{TEXT}">What tends to happen</text>')
+    # panel 1: outcome spread
+    b.append(f'<rect x="50" y="172" width="700" height="392" rx="8" fill="{PANEL}" stroke="#3a424d" stroke-width="1.3"/>')
+    b.append(f'<text x="78" y="208" font-family="{MONO}" font-size="15" letter-spacing="1.5" fill="{MUTED}">OUTCOME SPREAD · HOURS TO STABILIZE</text>')
+    x0, x1, hmax = 90, 710, 8
+    X = lambda h: x0 + (x1 - x0) * h / hmax
+    tx = X(4)
+    b.append(f'<line x1="{tx:.0f}" y1="226" x2="{tx:.0f}" y2="512" stroke="{RED}" stroke-opacity=".7" stroke-width="1.3"{DASH}/>')
+    b.append(f'<text x="{tx+8:.0f}" y="240" font-family="{MONO}" font-size="13" letter-spacing="1.5" fill="{RED}">TARGET</text>')
+    rows = [("City · cooling centers", 1.6, 2.6, False), ("Healthcare · ED diversion", 2.4, 3.5, False),
+            ("Crisis line · call wait", 1.8, 7.6, True), ("Board · press response", 0.7, 1.5, False)]
+    rnd = random.Random(7)
+    for i, (label, lo, hi, gap) in enumerate(rows):
+        y = 290 + i * 62
+        col = RED if gap else "#c9c6bf"
+        b.append(f'<text x="{x0}" y="{y-20}" font-family="{MONO}" font-size="14" letter-spacing="1" fill="{RED if gap else MUTED}">{esc(label.upper())}</text>')
+        b.append(f'<text x="{x1}" y="{y-20}" text-anchor="end" font-family="{MONO}" font-size="13" letter-spacing="1.5" fill="{RED if gap else MUTED}">{"REAL GAP" if gap else "ROBUST"}</text>')
+        b.append(f'<line x1="{x0}" y1="{y}" x2="{x1}" y2="{y}" stroke="{LINE}" stroke-width="1"/>')
+        if gap:  # 9 of 12 runs miss the target
+            vals = [rnd.uniform(lo, 3.8) for _ in range(3)] + [rnd.uniform(4.3, hi) for _ in range(9)]
+        else:
+            vals = [rnd.uniform(lo, hi) for _ in range(12)]
+        b.append(f'<line x1="{X(min(vals)):.1f}" y1="{y}" x2="{X(max(vals)):.1f}" y2="{y}" stroke="{col}" stroke-opacity=".5" stroke-width="3"/>')
+        for v in vals:
+            b.append(f'<circle cx="{X(v):.1f}" cy="{y + rnd.uniform(-7, 7):.1f}" r="6" fill="{col}" fill-opacity=".85" stroke="{PANEL}" stroke-width="1.5"/>')
+    for h in range(0, hmax + 1, 2):
+        b.append(f'<text x="{X(h):.0f}" y="540" text-anchor="middle" font-family="{MONO}" font-size="13" fill="{MUTED}">{h}h</text>')
+    # panel 2: pre -> post
+    b.append(f'<rect x="50" y="588" width="700" height="200" rx="8" fill="{PANEL}" stroke="#3a424d" stroke-width="1.3"/>')
+    b.append(f'<text x="78" y="624" font-family="{MONO}" font-size="15" letter-spacing="1.5" fill="{MUTED}">PRE → POST · PARTICIPANT READINESS</text>')
+    p0, p1 = 300, 710
+    P = lambda v: p0 + (p1 - p0) * v / 100
+    for i, (label, pre, post) in enumerate([("Activation", 42, 81), ("Handoffs", 35, 72), ("Public comms", 28, 77)]):
+        y = 668 + i * 44
+        b.append(f'<text x="78" y="{y+5}" font-family="{MONO}" font-size="14" letter-spacing="1" fill="{MUTED}">{label.upper()}</text>')
+        b.append(f'<line x1="{p0}" y1="{y}" x2="{p1}" y2="{y}" stroke="{LINE}" stroke-width="1"/>')
+        b.append(f'<line x1="{P(pre):.1f}" y1="{y}" x2="{P(post):.1f}" y2="{y}" stroke="#c9c6bf" stroke-opacity=".5" stroke-width="3"/>')
+        b.append(f'<circle cx="{P(pre):.1f}" cy="{y}" r="6" fill="{PANEL}" stroke="{MUTED}" stroke-width="2"/>')
+        b.append(f'<circle cx="{P(post):.1f}" cy="{y}" r="7" fill="#c9c6bf"/>')
+        b.append(f'<text x="{P(post)+14:.1f}" y="{y+5}" font-family="{MONO}" font-size="13" fill="#c9c6bf">+{post-pre}</text>')
+    # finding
+    b.append(f'<rect x="50" y="812" width="700" height="150" rx="8" fill="#24171a" stroke="{RED}" stroke-width="1.3"/>')
+    b.append(f'<text x="78" y="850" font-family="{MONO}" font-size="16" letter-spacing="1.5" fill="{RED}">FINDING 03 · BRIEFED TO LEADERSHIP</text>')
+    b.append(f'<text x="78" y="894" font-family="{SERIF}" font-size="29" fill="{TEXT}">Crisis line staffing misses target</text>')
+    b.append(f'<text x="78" y="932" font-family="{SERIF}" font-size="29" fill="{TEXT}">in 9 of 12 runs. Not luck: a real gap.</text>')
+    return svg(W, H, "\n".join(b))
+
+for name, fn in (("hero.svg", hero), ("ttx.svg", ttx), ("council.svg", council), ("program.svg", program)):
     with open(os.path.join(OUT, name), "w", encoding="utf-8") as f:
         f.write(fn())
 print("ok")

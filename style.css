@@ -126,6 +126,7 @@ tbody td:last-child{font-weight:500}
 .services{background:var(--surface)}
 .program{background:var(--surface)}
 .program .caps li{background:var(--bg)}
+.program-img{margin:var(--space-8) 0 0}.program-img img{width:100%;max-width:400px;aspect-ratio:4/5;object-fit:cover;border-radius:var(--radius-sm)}
 .program-sub{font-family:var(--font-display);font-size:var(--text-xl);font-weight:500;margin-bottom:var(--space-3)}
 .program-scale{margin:clamp(var(--space-12),6vw,var(--space-20)) 0 var(--space-6)}
 .tabs{display:flex;gap:var(--space-1);border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:none}
