@@ -52,14 +52,14 @@
     form.querySelectorAll('[required]').forEach(f=>{const bad=!f.value.trim()||(f.type==='email'&&!/^\S+@\S+\.\S+$/.test(f.value));f.classList.toggle('invalid',bad);f.setAttribute('aria-invalid',bad);if(bad)ok=false;});
     if(!ok){status.className='form-status err';status.textContent='Please complete name, organization, and a valid work email.';return;}
     if(form.elements.botcheck.checked)return;
-    const first=form.elements.name.value.trim().split(' ')[0];const topic=sel.value;
+    const first=form.elements.name.value.trim().split(' ')[0];
     submit.disabled=true;status.className='form-status';status.textContent='Sending…';
     try{
       const res=await fetch(form.action,{method:'POST',headers:{Accept:'application/json'},body:new FormData(form)});
       const data=await res.json().catch(()=>({}));
       if(!res.ok||!data.success)throw new Error(data.message||'Request failed');
       status.className='form-status ok';
-      status.textContent='Thanks, '+first+'. We’ll reach out to schedule a scoping call on '+topic+'.';
+      status.textContent='Thanks, '+first+'. We’ll be in touch within one business day.';
       form.reset();
     }catch(err){
       status.className='form-status err';
@@ -68,7 +68,7 @@
   });
 
   // reveal
-  const els=document.querySelectorAll('.section-head,.limits li,.pull,.compare,.sector,.method,.roster li,.offer,.flow li,.layers li,.guard,.team-card,.band-copy');
+  const els=document.querySelectorAll('.workflow,.price,.section-head,.limits li,.pull,.compare,.sector,.method,.roster li,.offer,.flow li,.layers li,.guard,.team-card,.band-copy');
   els.forEach(el=>el.classList.add('reveal'));
   const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}}),{rootMargin:'0px 0px -8% 0px'});
   els.forEach(el=>io.observe(el));
