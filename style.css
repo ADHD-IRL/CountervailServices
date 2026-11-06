@@ -366,3 +366,9 @@ tbody td:last-child{font-weight:500}
   .foot-nav{grid-column:1;grid-row:auto}
   .hero-facts div{grid-template-columns:7rem 1fr}
 }
+
+/* trimmed layout */
+.engage .product-grid .offer{height:100%}
+.sector-line{margin-top:var(--space-8);font-size:var(--text-sm);color:var(--muted);max-width:60ch}
+.price .btn{margin-top:auto;align-self:stretch}
+.price-for{flex:1}
